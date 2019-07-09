@@ -1,23 +1,22 @@
 package tela.manutencao;
 
-import ControladorProfessor.controlador;
+import controlador.ControladorProfessor;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Administrador
  */
-public class Professor extends javax.swing.JDialog {
+public class ManutencaoProfessor extends javax.swing.JDialog {
 
     /**
      * Creates new form Professor
      */
-    public Professor(java.awt.Frame parent, boolean modal) {
+    public ManutencaoProfessor(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -73,6 +72,11 @@ public class Professor extends javax.swing.JDialog {
         btnExcluir.setText("Excluir");
 
         btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -132,8 +136,12 @@ public class Professor extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
-controlador.ControladorProfessor.inserir(this);        // TODO add your handling code here:
+        controlador.ControladorProfessor.inserir(this);        // TODO add your handling code here:
     }//GEN-LAST:event_btnAdicionarActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+    dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,20 +160,21 @@ controlador.ControladorProfessor.inserir(this);        // TODO add your handling
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Professor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManutencaoProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Professor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManutencaoProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Professor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManutencaoProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Professor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManutencaoProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Professor dialog = new Professor(new javax.swing.JFrame(), true);
+                ManutencaoProfessor dialog = new ManutencaoProfessor(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -193,4 +202,16 @@ controlador.ControladorProfessor.inserir(this);        // TODO add your handling
     public javax.swing.JTextField jtfNome;
     public javax.swing.JTextField jtfSobrenome;
     // End of variables declaration//GEN-END:variables
+
+    public void setNome(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setSobrenome(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setEndereco(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

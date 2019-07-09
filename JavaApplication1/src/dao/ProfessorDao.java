@@ -40,4 +40,8 @@ public class ProfessorDao {
             JOptionPane.showMessageDialog(null, "Erro!");
         }
     }
+
+    public static boolean inserir(tela.manutencao.ManutencaoProfessor objeto) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
